@@ -1,13 +1,13 @@
 package com.assignment.controller;
 
-import dao.ComplaintDAO;
+import com.assignment.dao.ComplaintDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import model.Complaint;
-import model.User;
+import com.assignment.model.Complaint;
+import com.assignment.model.User;
 
 import java.io.IOException;
 
