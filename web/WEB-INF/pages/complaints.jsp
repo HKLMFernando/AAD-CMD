@@ -28,7 +28,8 @@
 
 
 
-<%@ page import="java.util.*, model.User, model.Complaint, dao.ComplaintDAO" %>
+<%@ page import="java.util.*, com.assignment.model.User, com.assignment.model.Complaint, " %>
+<%@ page import="com.assignment.dao.ComplaintDAO" %>
 <%
     User user = (User) session.getAttribute("user");
     if (user == null) {

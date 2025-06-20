@@ -44,8 +44,11 @@
 <%--</html>--%>
 
 
-<%@ page import="java.util.*, model.Complaint, dao.ComplaintDAO" %>
-<%@ page import="model.User" %>
+
+<%@ page import="com.assignment.model.Complaint" %>
+<%@ page import="com.assignment.dao.ComplaintDAO" %>
+<%@ page import="com.assignment.model.User" %>
+<%@ page import="java.util.List" %>
 <%
     User user = (User) session.getAttribute("user");
     if (user == null || !"Admin".equalsIgnoreCase(user.getRole())) {
