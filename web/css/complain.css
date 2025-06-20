@@ -1,0 +1,480 @@
+/* Add this CSS to your existing JSP file inside <style> tags in the <head> section */
+
+/* Modern CSS Variables */
+:root {
+    --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
+    --secondary-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+    --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    --border-radius: 16px;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Body and Background */
+body {
+    background: var(--primary-gradient) !important;
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    padding: 2rem 0 !important;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+            radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Container Enhancement */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    box-shadow: var(--card-shadow);
+    padding: 3rem !important;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed, #ec4899, #f59e0b);
+    border-radius: 24px 24px 0 0;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Header Styling */
+h2 {
+    color: #1e1b4b !important;
+    font-weight: 800 !important;
+    font-size: 2.75rem !important;
+    text-align: center;
+    margin-bottom: 2.5rem !important;
+    position: relative;
+    padding-bottom: 1.5rem;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed, #ec4899);
+    border-radius: 2px;
+    box-shadow: 0 2px 10px rgba(79, 70, 229, 0.3);
+}
+
+/* User Info Badge */
+h2::before {
+    content: '👤 My Personal Dashboard';
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* Table Container */
+.table {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: none !important;
+    margin-bottom: 2.5rem !important;
+    position: relative;
+}
+
+.table::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed, #ec4899);
+}
+
+/* Table Header */
+.table thead th {
+    background: linear-gradient(135deg, #1e1b4b, #312e81) !important;
+    color: white !important;
+    border: none !important;
+    padding: 1.5rem 1.2rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.table thead th:first-child {
+    border-radius: var(--border-radius) 0 0 0;
+}
+
+.table thead th:last-child {
+    border-radius: 0 var(--border-radius) 0 0;
+}
+
+.table thead th::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+/* Table Body */
+.table tbody td {
+    padding: 1.25rem 1.2rem !important;
+    vertical-align: middle !important;
+    border-color: #e5e7eb !important;
+    transition: var(--transition);
+    position: relative;
+}
+
+.table tbody tr {
+    transition: var(--transition);
+    position: relative;
+}
+
+.table tbody tr:hover {
+    background: linear-gradient(135deg, #f8faff 0%, #f1f5ff 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.08);
+}
+
+.table tbody tr:hover td {
+    border-color: #c7d2fe !important;
+}
+
+/* Enhanced Cell Styling */
+.table tbody td:first-child {
+    font-weight: 700;
+    color: #4f46e5;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.table tbody td:first-child::before {
+    content: '#';
+    opacity: 0.5;
+    margin-right: 2px;
+}
+
+.table tbody td:nth-child(2) {
+    font-weight: 600;
+    color: #1e1b4b;
+    max-width: 250px;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.table tbody td:nth-child(3) {
+    color: #4b5563;
+    max-width: 350px;
+    word-wrap: break-word;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.table tbody td:nth-child(4) {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+    position: relative;
+}
+
+/* Advanced Status Styling */
+.table tbody tr td:nth-child(4) {
+    padding: 0.75rem 1rem !important;
+}
+
+/* Status Badge Styling */
+.table tbody td:nth-child(4)::before {
+    content: attr(data-status);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+/* Dynamic Status Colors */
+.table tbody tr:has(td:nth-child(4):icontains("pending")) td:nth-child(4) {
+    background: linear-gradient(135deg, #fef3c7, #fde68a) !important;
+    color: #92400e !important;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+    position: relative;
+}
+
+.table tbody tr:has(td:nth-child(4):icontains("resolved")) td:nth-child(4) {
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0) !important;
+    color: #065f46 !important;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    position: relative;
+}
+
+.table tbody tr:has(td:nth-child(4):icontains("progress")) td:nth-child(4) {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe) !important;
+    color: #1e40af !important;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    position: relative;
+}
+
+/* Fallback Status Styling */
+.table tbody td:nth-child(4):not([style*="background"]) {
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb) !important;
+    color: #374151 !important;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(107, 114, 128, 0.2);
+}
+
+/* Enhanced Back Button */
+.btn-secondary {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed) !important;
+    border: none !important;
+    padding: 1rem 2.5rem !important;
+    border-radius: 15px !important;
+    font-weight: 700 !important;
+    transition: var(--transition) !important;
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.3) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+    overflow: hidden;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.btn-secondary::before {
+    content: '←';
+    margin-right: 0.75rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.btn-secondary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #3730a3, #6d28d9) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.4) !important;
+    color: white !important;
+}
+
+.btn-secondary:hover::after {
+    left: 100%;
+}
+
+.btn-secondary:active {
+    transform: translateY(-1px) !important;
+}
+
+/* Empty State Styling */
+.table tbody:empty::after {
+    content: '📋 No complaints found. You haven\'t submitted any complaints yet.';
+    display: block;
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #6b7280;
+    font-style: italic;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+    margin: 1rem;
+    border-radius: 12px;
+    border: 2px dashed #d1d5db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem !important;
+        padding: 2rem 1.5rem !important;
+    }
+
+    h2 {
+        font-size: 2.25rem !important;
+    }
+
+    h2::before {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .table {
+        font-size: 0.9rem;
+    }
+
+    .table tbody td:nth-child(3) {
+        max-width: 200px;
+    }
+
+    .table tbody td:nth-child(2) {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        border-radius: 16px;
+        margin: 0.5rem !important;
+        padding: 1.5rem 1rem !important;
+    }
+
+    h2 {
+        font-size: 1.9rem !important;
+    }
+
+    .table thead th,
+    .table tbody td {
+        padding: 0.9rem 0.6rem !important;
+        font-size: 0.85rem;
+    }
+
+    .btn-secondary {
+        padding: 0.8rem 1.8rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    .table tbody td:nth-child(3) {
+        max-width: 120px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Page Load Animation */
+.container {
+    animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Table Rows Staggered Animation */
+.table tbody tr {
+    animation: fadeInRow 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.table tbody tr:nth-child(2) { animation-delay: 0.2s; }
+.table tbody tr:nth-child(3) { animation-delay: 0.3s; }
+.table tbody tr:nth-child(4) { animation-delay: 0.4s; }
+.table tbody tr:nth-child(n+5) { animation-delay: 0.5s; }
+
+@keyframes fadeInRow {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Enhanced Table Striped Effect */
+.table-striped tbody tr:nth-of-type(odd) td {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.02), rgba(124, 58, 237, 0.02)) !important;
+}
+
+/* Focus States for Accessibility */
+.btn:focus {
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.25) !important;
+    outline: none !important;
+}
+
+/* Professional Scrollbar */
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgba(243, 244, 246, 0.5);
+    border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #3730a3, #6d28d9);
+}

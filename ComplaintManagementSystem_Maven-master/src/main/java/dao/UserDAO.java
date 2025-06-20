@@ -1,11 +1,10 @@
-package com.assignment.dao;
+package dao;
 
-import com.assignment.model.User;
+import model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class UserDAO {
 
@@ -21,7 +20,6 @@ public class UserDAO {
                 return new User(
                         rs.getInt("id"),
                         rs.getString("username"),
-                        rs.getString("password"),
                         rs.getString("role")
                 );
             }
@@ -29,23 +27,5 @@ public class UserDAO {
             e.printStackTrace();
         }
         return null;
-    }
-
-    public static boolean registerUser(User user) {
-        String sql = "INSERT INTO users (id,username, password, role) VALUES (?, ?, ?, ?)";
-        try (Connection conn = DBConnection.getDataSource().getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-
-            ps.setString(1, user.getUsername());
-            ps.setString(2, user.getUsername());
-            ps.setString(3, user.getPassword());
-            ps.setString(4, user.getRole());
-
-            return ps.executeUpdate() > 0;
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
     }
 }

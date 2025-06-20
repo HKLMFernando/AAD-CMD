@@ -12,6 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard - Complaint Management</title>
+    <link rel="stylesheet" href="../css/dashbord.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
