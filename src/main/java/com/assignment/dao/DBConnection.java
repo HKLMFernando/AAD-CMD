@@ -10,7 +10,7 @@ public class DBConnection {
     static {
         ds.setUrl("jdbc:mysql://localhost:3306/complaint_db");
         ds.setUsername("root");
-        ds.setPassword("12345");
+        ds.setPassword("Ijse@1234");
         ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
         ds.setMinIdle(5);
         ds.setMaxIdle(10);

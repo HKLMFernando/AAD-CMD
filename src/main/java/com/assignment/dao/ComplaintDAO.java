@@ -1,6 +1,6 @@
 package com.assignment.dao;
 
-import model.Complaint;
+import com.assignment.model.Complaint;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

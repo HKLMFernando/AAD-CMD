@@ -1,6 +1,6 @@
 package com.assignment.dao;
 
-import model.User;
+import com.assignment.model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
