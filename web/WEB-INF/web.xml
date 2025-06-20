@@ -5,7 +5,7 @@
          version="4.0">
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>controller.LoginServlet</servlet-class>
+        <servlet-class>com.assignment.controller.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -16,7 +16,7 @@
 
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>com.assignment.controller.ComplaintServlet</servlet-class>
+        <servlet-class>com.assignment.controller.LogoutServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
@@ -38,11 +38,10 @@
 
     <servlet>
         <servlet-name>DeleteComplaintServlet</servlet-name>
-        <servlet-class>controller.DeleteComplaintServlet</servlet-class>
+        <servlet-class>com.assignment.controller.DeleteComplaintServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DeleteComplaintServlet</servlet-name>
         <url-pattern>/DeleteComplaintServlet</url-pattern>
     </servlet-mapping>
-
 </web-app>
